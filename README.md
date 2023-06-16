@@ -8,9 +8,6 @@ The Caesar Cipher is a simple substitution cipher where each letter in the plain
 
 1. Clone the repository:
 
-   ```shell
-   git clone 
-
 2. Open the project in your preferred Java IDE.
 
 3. Locate the org.caesar_template_method.App class and run it.
