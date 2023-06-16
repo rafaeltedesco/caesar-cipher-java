@@ -1,15 +1,21 @@
 package org.caesar_template_method;
 
-public class App 
+import java.util.Scanner;
+
+public class App
 {
     public static void main( String[] args )
     {
-        String message = "hello";
-        AbstractCipher cryptMessage = new CryptMessage(message);
-        String hashedMessage = cryptMessage.execute(10);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your message: ");
+        String message = scanner.nextLine();
+        System.out.println("Enter your integer key");
+        int key = scanner.nextInt();
+        CaesarCipher cipher = new CaesarCipher(new CryptMessage(), message);
+        String hashedMessage = cipher.execute(key);
         System.out.println(hashedMessage);
-        AbstractCipher decryptMessage = new DecryptMessage(hashedMessage);
-        String decodedMessage = decryptMessage.execute(10);
+        cipher.setCipher(new DecryptMessage());
+        String decodedMessage = cipher.execute(key);
         System.out.println(decodedMessage);
     }
 }
